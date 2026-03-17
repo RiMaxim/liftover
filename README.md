@@ -14,3 +14,14 @@ This pipeline performs liftOver of VCF variants from one genome assembly to anot
 
 ## 📁 Structure
 
+.
+├── data/ # Input files (VCF, header)
+├── results/ # Output files
+├── minimap2/ # Alignment container
+│ ├── Dockerfile
+│ └── run_minimap2.sh
+├── paftools/ # Liftover container
+│ ├── Dockerfile
+│ └── run_paftools.sh
+├── docker-compose.yml
+└── run_pipeline.sh
