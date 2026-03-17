@@ -1,0 +1,30 @@
+services:
+  minimap2:
+    build: ./minimap2
+    image: minimap2-pipeline:${MINIMAP2_VERSION:-2.24}
+    container_name: minimap2-aligner
+    volumes:
+      - ./data:/data:ro
+      - ./results:/results
+      - genomes_volume:/genomes  # Том для сохранения геномов между запусками
+    working_dir: /workspace
+    command: run_minimap2.sh
+    environment:
+      - OMP_NUM_THREADS=60
+
+  paftools:
+    build: ./paftools
+    image: paftools-pipeline:${MINIMAP2_VERSION:-2.24}
+    container_name: paftools-liftover
+    volumes:
+      - ./data:/data:ro
+      - ./results:/results
+      - genomes_volume:/genomes:ro  # Только чтение геномов
+    working_dir: /workspace
+    command: run_paftools.sh
+    depends_on:
+      - minimap2
+    restart: "no"
+
+volumes:
+  genomes_volume:  # Именованный том для хранения геномов
