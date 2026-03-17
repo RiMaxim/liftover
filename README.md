@@ -12,16 +12,12 @@ This pipeline performs liftOver of VCF variants from one genome assembly to anot
 - **paftools.js**: VCF liftover utility
 - **Two Docker images**: Separate containers for alignment and liftover steps
 
-## 📁 Structure
+## 🚀 Usage
 
-.
-├── data/ # Input files (VCF, header)
-├── results/ # Output files
-├── minimap2/ # Alignment container
-│ ├── Dockerfile
-│ └── run_minimap2.sh
-├── paftools/ # Liftover container
-│ ├── Dockerfile
-│ └── run_paftools.sh
-├── docker-compose.yml
-└── run_pipeline.sh
+1. **Prepare input files** in `data/`:
+   - `test.vcf` - variants to transfer
+   - `header_GCA_030864155.1.txt` - target assembly header
+
+2. **Run pipeline**:
+   ```bash
+   ./run_pipeline.sh
