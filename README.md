@@ -24,19 +24,19 @@ This pipeline performs liftOver of VCF variants from one genome assembly to anot
    ```
    
    NB!
-   test.lifted.vcf - successfully transferred variants
-   test.nolifted.vcf - variants that couldn't be transferred
+   - test.lifted.vcf - successfully transferred variants
+   - test.nolifted.vcf - variants that couldn't be transferred
 
-3. **Requirements**:
+4. **Requirements**:
    - Docker
    - Docker Compose
 
-4. **Versions**:
+5. **Versions**:
    - minimap2: 2.24
    - Ubuntu: 22.04
    - k8: 0.2.6 (included in minimap2)
 
-5. **Pipeline Steps**:
+6. **Pipeline Steps**:
    - Download reference genomes from NCBI
    - Align genomes with minimap2
    - Convert coordinates with paftools.js
