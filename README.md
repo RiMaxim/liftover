@@ -21,7 +21,7 @@ This pipeline performs liftOver of VCF variants from one genome assembly to anot
 2. **Run pipeline**:
    ```bash
    ./run_pipeline.sh
-
+   ```
    - Get results from results/:
    test.lifted.vcf - successfully transferred variants
    test.nolifted.vcf - variants that couldn't be transferred
