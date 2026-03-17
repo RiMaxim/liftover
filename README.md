@@ -9,6 +9,8 @@ paftools.js: VCF liftover utility
 Two Docker images: Separate containers for alignment and liftover steps
 
 📁 Structure
+
+text
 .
 ├── data/               # Input files (VCF, header)
 ├── results/            # Output files
@@ -21,7 +23,9 @@ Two Docker images: Separate containers for alignment and liftover steps
 ├── docker-compose.yml
 └── run_pipeline.sh
 
+
 🚀 Usage
+
 Prepare input files in data/:
 test.vcf - variants to transfer
 header_GCA_030864155.1.txt - target assembly header
@@ -35,15 +39,18 @@ test.lifted.vcf - successfully transferred variants
 test.nolifted.vcf - variants that couldn't be transferred
 
 📦 Requirements
+
 Docker
 Docker Compose
 
 ⚙️ Versions
+
 minimap2: 2.24
 Ubuntu: 22.04
 k8: 0.2.6 (included in minimap2)
 
 📊 Pipeline Steps
+
 Download reference genomes from NCBI
 Align genomes with minimap2
 Convert coordinates with paftools.js
